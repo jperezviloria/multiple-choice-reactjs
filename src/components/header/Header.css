@@ -1,0 +1,27 @@
+.header-style{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    text-align: center;
+    margin: 30px;
+    background-color: aliceblue;
+    height:90px;
+    align-content: center;
+    width: 720px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+}
+
+.header-style-link{
+    display: grid;
+    margin: 0 auto;
+    text-decoration:none;
+    padding: 10px;
+    color: rgb(226, 226, 226);
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(177, 62, 62);
+    border-radius: 9px;
+    
+    
+}
