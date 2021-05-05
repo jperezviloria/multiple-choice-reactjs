@@ -4,6 +4,17 @@ import axios from "axios"
 import Swal from "sweetalert2"
 import Switch from "react-switch";
 
+import {
+    printBody, 
+    changeStateSlice, 
+    checkThatHaveOnlyOneTrue, 
+    checkThatHaveAllAsnwers, 
+    checkThatQuestionIsNotEmpty,
+    checkThatLevelIsNotEmpty,
+    checkAllValidations,
+    joinAnswersAndBool} 
+from "./QuetionFactory.js"
+
 import "./QuestionFactory.css"
 
 
@@ -14,45 +25,56 @@ const QuestionFactory = () =>{
     const [checkedTwo, setCheckedTwo] = useState(false)
     const [checkedThree, setCheckedThree] = useState(false)
     const [checkedFour, setCheckedFour] = useState(false)
-    //const [handleChange, setHandleChange] = useState(handleSubmit.bind)
 
     const onSubmitUserForm = (data) =>{
 
             const arrayBooleans = [checkedOne, checkedTwo, checkedThree, checkedFour]
-            const result = checkThatHaveOnlyOneTrue(arrayBooleans)
-            console.log(result)
+            const arrayAnswers = [
+                data.answer1,
+                data.answer2,
+                data.answer3,
+                data.answer4]
+            // const result1 = checkThatHaveOnlyOneTrue(arrayBooleans)
+            // console.log(result1)
+            
+            // const validation = checkThatHaveAllAsnwers(arrayAnswers)
+            // console.log(validation)
 
+            // const validation2 = checkThatQuestionIsNotEmpty(data.question)
+            // console.log(validation2)
+
+            // const validation3 = checkThatLevelIsNotEmpty(data.level)
+            // console.log(validation3)
+            checkAllValidations(arrayBooleans, arrayAnswers,data.question, data.level)
+            const answersJoined = joinAnswersAndBool(arrayAnswers, arrayBooleans)
+            
             const body ={
-            idLevel: data.level,
+            idLevel: parseInt(data.level),
             question: data.question,
-            answers: data
+            answers: answersJoined,
         }
         printBody(body)
     }
 
-    const printBody = (body) =>{
-        console.log(body)
-    }
+    // const changeStateSlice = (booleanValue) =>{
+    //     return booleanValue === true ?  false : true
+    // }
 
-    const changeStateSlice = (booleanValue) =>{
-        return booleanValue === true ?  false : true
-    }
+    // const checkThatHaveOnlyOneTrue = (booleanArray) =>{
+    //     const result = booleanArray.filter(condition => condition === true)
 
-    const checkThatHaveOnlyOneTrue = (booleanArray) =>{
-        const result = booleanArray.filter(condition => condition === true)
-
-        if (result.length > 1 || result.length === 0)
-        return false
-        else if (result.length === 1)
-        return true
+    //     if (result.length > 1 || result.length === 0)
+    //     return false
+    //     else if (result.length === 1)
+    //     return true
         
-    }
-
+    // }
 
     return (
-        <form onSubmit={handleSubmit(onSubmitUserForm)}>
+        <form onSubmit={handleSubmit(onSubmitUserForm)} className = "questionfactory">
+            <p>Ingresa la pregunta</p>
+            <div className = "questionfactory-questionlevel">
             <div>
-                <p>Ingresa la pregunta</p>
                 <input 
                 type="" 
                 placeholder="question"
@@ -68,8 +90,10 @@ const QuestionFactory = () =>{
                     <option value="2">level 2</option>
                 </select>
             </div>
-            <div>
-                <div>
+            </div>
+            
+            <div className = "questionfactory-answers">
+                <div className = "questionfactory-answers-internal">
                 <input 
                 type="text" 
                 placeholder="answer 1"
@@ -87,7 +111,7 @@ const QuestionFactory = () =>{
                 height={20}
                 width={48}/>
                 </div>
-                <div>
+                <div className = "questionfactory-answers-internal">
                 <input 
                 type="text" 
                 placeholder="answer 2"
@@ -106,7 +130,8 @@ const QuestionFactory = () =>{
                 height={20}
                 width={48}
                 />
-                </div><div>
+                </div>
+                <div className = "questionfactory-answers-internal">
                 <input 
                 type="text" 
                 placeholder="answer 3"
@@ -124,7 +149,8 @@ const QuestionFactory = () =>{
                 activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
                 height={20}
                 width={48}/>
-                </div><div>
+                </div>
+                <div className = "questionfactory-answers-internal">
                 <input 
                 type="text" 
                 placeholder="answer 4"

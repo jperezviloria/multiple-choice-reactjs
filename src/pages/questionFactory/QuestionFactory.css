@@ -1,0 +1,63 @@
+.questionfactory{
+    font-family: 'Poppins', sans-serif;
+    margin: 30px auto;
+    display: grid;
+    justify-content: center;
+    border: 5px solid rgb(184, 111, 15);
+    border-radius: 30px;
+    width: 600px;
+    text-align: center;
+}
+
+.questionfactory button{
+    width: 250px;
+    padding:15px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+
+.questionfactory p{
+    font-size: 30px;
+}
+
+.questionfactory-questionlevel{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-items: center;
+    margin: 30px;
+}
+
+.questionfactory-questionlevel input, select{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid orange;
+    background-color: aliceblue;
+}
+
+.questionfactory-answers {
+    display: grid;
+    justify-items: center;
+    margin: 10px;
+    align-self: center;
+}
+
+.questionfactory-answers input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid orange;
+    text-align: center;
+}
+
+.questionfactory-answers-internal{
+    display: grid;
+    grid-template-columns: 300px 30%;
+    align-items: center;
+    margin: 10px;  
+}
+ 
+
+
+
+
