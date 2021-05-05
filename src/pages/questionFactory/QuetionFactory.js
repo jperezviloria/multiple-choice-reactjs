@@ -101,14 +101,14 @@ export const checkAllValidations = (booleanArray, answerArray, question, level) 
 export const joinAnswersAndBool = (answerArray, booleanArray) => {
     
     var answers = [
-        {answerArray: answerArray[0],
-        booleanArray: booleanArray[0]},
-        {answerArray: answerArray[1],
-        booleanArray: booleanArray[1]},
-        {answerArray: answerArray[2],
-        booleanArray: booleanArray[2]},
-        {answerArray: answerArray[3],
-        booleanArray: booleanArray[3]}
+        {answer: answerArray[0],
+        correct: booleanArray[0]},
+        {answer: answerArray[1],
+        correct: booleanArray[1]},
+        {answer: answerArray[2],
+        correct: booleanArray[2]},
+        {answer: answerArray[3],
+        correct: booleanArray[3]}
     ]
     return answers
 

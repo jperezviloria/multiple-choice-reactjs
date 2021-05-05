@@ -26,7 +26,7 @@ const QuestionFactory = () =>{
     const [checkedThree, setCheckedThree] = useState(false)
     const [checkedFour, setCheckedFour] = useState(false)
 
-    const onSubmitUserForm = (data) =>{
+    const onSubmitUserForm = async(data) =>{
 
             const arrayBooleans = [checkedOne, checkedTwo, checkedThree, checkedFour]
             const arrayAnswers = [
@@ -53,6 +53,20 @@ const QuestionFactory = () =>{
             question: data.question,
             answers: answersJoined,
         }
+        const request = await axios.post(`/question/factory`, body)
+        .then((response) =>{
+            if( response.data.status === 201){
+                console.log(response.data.message)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'successful creation',
+                    text: "The question has been created",
+                    
+                  })
+            }
+        }).catch((error) =>{
+            console.log(error)
+        })
         printBody(body)
     }
 
