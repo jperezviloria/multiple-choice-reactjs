@@ -1,14 +1,24 @@
 import React from "react"
 import "./Header.css"
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory,
+    useLocation
+  } from "react-router-dom";
+
 
 const Header = () =>{
     return(
         <div className="header-style">
-            <a className="header-style-link" href="">Question Factory</a>
-            <a className="header-style-link" href="">Show Questions</a>
-            <a className="header-style-link" href="">Test type Factory</a>
-            <a className="header-style-link" href="">Show Test type</a>
+            <Link className="header-style-link" to="/questionfactory">Question Factory</Link>
+            <Link className="header-style-link" to="/questionfactory">Show Questions</Link>
+            <Link className="header-style-link" to="/questionfactory">Test type Factory</Link>
+            <Link className="header-style-link" to="/questionfactory">Show Test type</Link>
         </div>
     )
 }
