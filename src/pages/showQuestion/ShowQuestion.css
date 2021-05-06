@@ -1,0 +1,4 @@
+.show-question{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
