@@ -1,0 +1,9 @@
+.LevelSelector select{
+  width: 300px;
+}
+
+.LevelSelector button{
+  margin: 20px;
+  padding: 5px;
+
+}

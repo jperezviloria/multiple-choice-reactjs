@@ -1,4 +1,12 @@
-.show-question{
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
+.show-question{ 
+
+  margin-top: 50px; 
+  display: grid;
+  justify-items:center;
+}
+
+.show-question-particularcard{
+  display: grid;
+  grid-template-columns:repeat(3, 33%);
+  margin: 50px;
 }
