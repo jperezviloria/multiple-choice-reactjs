@@ -1,15 +1,15 @@
 import React from "react"
 import "./ParticularCard.css"
 
-const ParticularCard = () =>{
+const ParticularCard = (props) =>{
 
     return (
         <div className = "particular-card">
-            <h3>pregunta que puede ser un poco mas larga de lo que se esta acostumbrado</h3>
-            <p>respuesta 1 TRUE</p>
-            <p>respuesta 2 TRUE</p>
-            <p>respuesta 3 FALSE</p>
-            <p>respuesta 4 FALSE</p>
+            <h3>{props.question}</h3>
+            <p className = {"particular-card-answer-" + props.correct0}>{props.answer0}</p>
+            <p className = {"particular-card-answer-" + props.correct1}>{props.answer1}</p>
+            <p className = {"particular-card-answer-" + props.correct2}>{props.answer2}</p>
+            <p className = {"particular-card-answer-" + props.correct3}>{props.answer3}</p>
             
         </div>
     )

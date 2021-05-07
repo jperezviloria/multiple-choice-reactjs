@@ -7,6 +7,6 @@
 
 .show-question-particularcard{
   display: grid;
-  grid-template-columns:repeat(3, 33%);
+  grid-template-columns:repeat(3, 400px);
   margin: 50px;
 }

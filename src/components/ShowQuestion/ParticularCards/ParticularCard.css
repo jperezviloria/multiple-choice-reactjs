@@ -24,3 +24,13 @@
     border-radius: 5px;
     font-size: 18px;
 }
+
+
+.particular-card-answer-false{
+  background-color: red;
+}
+
+
+.particular-card-answer-true{
+  background-color: green;
+}
