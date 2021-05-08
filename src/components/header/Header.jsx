@@ -17,7 +17,7 @@ const Header = () =>{
         <div className="header-style">
             <Link className="header-style-link" to="/questionfactory">Question Factory</Link>
             <Link className="header-style-link" to="/showquestion">Show Questions</Link>
-            <Link className="header-style-link" to="/questionfactory">Test type Factory</Link>
+            <Link className="header-style-link" to="/testtypefactory">Test type Factory</Link>
             <Link className="header-style-link" to="/questionfactory">Show Test type</Link>
         </div>
     )
